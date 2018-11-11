@@ -27,7 +27,8 @@ int	*prime_factors(unsigned int n)
 			i = 2;
 			j++;
 		}
-		i++;
+		else
+			i++;
 	}
 	while (j < n)
 	{
@@ -38,7 +39,7 @@ int	*prime_factors(unsigned int n)
 }
 int main()
 {
-	unsigned int n = 98;
+	unsigned int n = 24;
 	for (int i = 0;i < n;i++)
 	{
 		printf("%d\t",prime_factors(n)[i]);
