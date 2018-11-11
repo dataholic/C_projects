@@ -14,7 +14,7 @@ int	is_prime(unsigned int n)
 
 int	*prime_factors(unsigned int n)
 {
-	int *factors = (int *)malloc(sizeof(int) * n);
+	int *factors = (int *)malloc(sizeof(int) * (n / 2));
 	int i = 2;
 	int j = 0;
 	int m = n;
@@ -30,7 +30,7 @@ int	*prime_factors(unsigned int n)
 		else
 			i++;
 	}
-	while (j < n)
+	while (j < (n / 2))
 	{
 		factors[j] = 1;
 		j++;
@@ -39,8 +39,8 @@ int	*prime_factors(unsigned int n)
 }
 int main()
 {
-	unsigned int n = 24;
-	for (int i = 0;i < n;i++)
+	unsigned int n = 5800;
+	for (int i = 0;prime_factors(n)[i] != 1;i++)
 	{
 		printf("%d\t",prime_factors(n)[i]);
 	}
